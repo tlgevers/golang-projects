@@ -2,11 +2,9 @@ package main
 
 import (
     "context"
-    "log"
     "time"
     "google.golang.org/grpc"
     pb "github.com/tlgevers/golang-projects/calculator/client/calc"
-    "net/http"
     "fmt"
 )
 
@@ -18,7 +16,7 @@ const (
 func sum() (sum int32, err error) {
     conn, err := grpc.Dial(address, grpc.WithInsecure(), grpc.WithBlock())
     if err != nil {
-        log.Fatalf("did not connect: %v", err)
+        fmt.Println(err)
         return
     }
     defer conn.Close()
@@ -29,24 +27,19 @@ func sum() (sum int32, err error) {
 
     r, err := c.Sum(ctx, &pb.Request{ArgA: 1, ArgB: 5})
     if err != nil {
-        log.Fatalf("could not sum: %v", err)
+        fmt.Println(err)
         return
     }
-    log.Printf("Sum is: %v", r.GetResult())
+    fmt.Printf("Sum is: %v", r.GetResult())
     sum = r.GetResult()
     return
 }
 
-func handler(w http.ResponseWriter, request *http.Request) {
-    sum,err := sum()
-    if err != nil {
-        log.Fatalf("could not get sum: %v", err)
-    }
-    fmt.Printf("the sum is %v", sum)
-    fmt.Fprintf(w, "The sum is: %v", sum)
-}
-
 func main() {
-    http.HandleFunc("/", handler)
-    http.ListenAndServe(":8081", nil)
+    fmt.Println("Hello World!")
+    //sum, err := sum()
+    //if err != nil {
+    //    fmt.Println(err)
+    //}
+    fmt.Println("sum")
 }
