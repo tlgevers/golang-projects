@@ -7,14 +7,14 @@ option java_outer_classname = "CalcProto";
 package calc;
 
 service Calc {
-  rpc Sum(Req) returns (Res) {}
+  rpc Sum(Request) returns (Result) {}
 }
 
-message Req {
+message Request {
   int32 argA = 1;
   int32 argB = 2;
 }
 
-message Res {
+message Result {
   int32 result = 1;
 }

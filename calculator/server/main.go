@@ -3,7 +3,7 @@ package main
 import (
     "fmt"
     "google.golang.org/grpc"
-    pb "github.com/tlgevers/golang-projects/calculator/calc"
+    pb "github.com/tlgevers/golang-projects/calculator/server/calc"
     "context"
     "log"
     "net"
@@ -19,9 +19,9 @@ type server struct {
 }
 
 // Sum implements calc.CalcServer
-func (s *server) Sum(ctx context.Context, in *pb.CalcRequest) (*pb.CalcResult, error) {
-    log.Printf("Recieved: %v", in.argA, in.argB)
-    return &pb.CalcResult{result: in.argA + in.argB}, nil
+func (s *server) Sum(ctx context.Context, in *pb.Request) (*pb.Result, error) {
+    log.Printf("Recieved: %v | %v", in.ArgA, in.ArgB) //
+    return &pb.Result{Result: in.ArgA + in.ArgB}, nil
 }
 
 func main() {

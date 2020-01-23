@@ -24,7 +24,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type Req struct {
+type Request struct {
 	ArgA                 int32    `protobuf:"varint,1,opt,name=argA,proto3" json:"argA,omitempty"`
 	ArgB                 int32    `protobuf:"varint,2,opt,name=argB,proto3" json:"argB,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -32,78 +32,78 @@ type Req struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *Req) Reset()         { *m = Req{} }
-func (m *Req) String() string { return proto.CompactTextString(m) }
-func (*Req) ProtoMessage()    {}
-func (*Req) Descriptor() ([]byte, []int) {
+func (m *Request) Reset()         { *m = Request{} }
+func (m *Request) String() string { return proto.CompactTextString(m) }
+func (*Request) ProtoMessage()    {}
+func (*Request) Descriptor() ([]byte, []int) {
 	return fileDescriptor_a2b9900dc883ea68, []int{0}
 }
 
-func (m *Req) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_Req.Unmarshal(m, b)
+func (m *Request) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Request.Unmarshal(m, b)
 }
-func (m *Req) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_Req.Marshal(b, m, deterministic)
+func (m *Request) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Request.Marshal(b, m, deterministic)
 }
-func (m *Req) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Req.Merge(m, src)
+func (m *Request) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Request.Merge(m, src)
 }
-func (m *Req) XXX_Size() int {
-	return xxx_messageInfo_Req.Size(m)
+func (m *Request) XXX_Size() int {
+	return xxx_messageInfo_Request.Size(m)
 }
-func (m *Req) XXX_DiscardUnknown() {
-	xxx_messageInfo_Req.DiscardUnknown(m)
+func (m *Request) XXX_DiscardUnknown() {
+	xxx_messageInfo_Request.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_Req proto.InternalMessageInfo
+var xxx_messageInfo_Request proto.InternalMessageInfo
 
-func (m *Req) GetArgA() int32 {
+func (m *Request) GetArgA() int32 {
 	if m != nil {
 		return m.ArgA
 	}
 	return 0
 }
 
-func (m *Req) GetArgB() int32 {
+func (m *Request) GetArgB() int32 {
 	if m != nil {
 		return m.ArgB
 	}
 	return 0
 }
 
-type Res struct {
+type Result struct {
 	Result               int32    `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *Res) Reset()         { *m = Res{} }
-func (m *Res) String() string { return proto.CompactTextString(m) }
-func (*Res) ProtoMessage()    {}
-func (*Res) Descriptor() ([]byte, []int) {
+func (m *Result) Reset()         { *m = Result{} }
+func (m *Result) String() string { return proto.CompactTextString(m) }
+func (*Result) ProtoMessage()    {}
+func (*Result) Descriptor() ([]byte, []int) {
 	return fileDescriptor_a2b9900dc883ea68, []int{1}
 }
 
-func (m *Res) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_Res.Unmarshal(m, b)
+func (m *Result) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Result.Unmarshal(m, b)
 }
-func (m *Res) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_Res.Marshal(b, m, deterministic)
+func (m *Result) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Result.Marshal(b, m, deterministic)
 }
-func (m *Res) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Res.Merge(m, src)
+func (m *Result) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Result.Merge(m, src)
 }
-func (m *Res) XXX_Size() int {
-	return xxx_messageInfo_Res.Size(m)
+func (m *Result) XXX_Size() int {
+	return xxx_messageInfo_Result.Size(m)
 }
-func (m *Res) XXX_DiscardUnknown() {
-	xxx_messageInfo_Res.DiscardUnknown(m)
+func (m *Result) XXX_DiscardUnknown() {
+	xxx_messageInfo_Result.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_Res proto.InternalMessageInfo
+var xxx_messageInfo_Result proto.InternalMessageInfo
 
-func (m *Res) GetResult() int32 {
+func (m *Result) GetResult() int32 {
 	if m != nil {
 		return m.Result
 	}
@@ -111,24 +111,24 @@ func (m *Res) GetResult() int32 {
 }
 
 func init() {
-	proto.RegisterType((*Req)(nil), "calc.Req")
-	proto.RegisterType((*Res)(nil), "calc.Res")
+	proto.RegisterType((*Request)(nil), "calc.Request")
+	proto.RegisterType((*Result)(nil), "calc.Result")
 }
 
 func init() { proto.RegisterFile("calc.proto", fileDescriptor_a2b9900dc883ea68) }
 
 var fileDescriptor_a2b9900dc883ea68 = []byte{
-	// 146 bytes of a gzipped FileDescriptorProto
+	// 153 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x4a, 0x4e, 0xcc, 0x49,
-	0xd6, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x01, 0xb1, 0x95, 0x74, 0xb9, 0x98, 0x83, 0x52,
-	0x0b, 0x85, 0x84, 0xb8, 0x58, 0x12, 0x8b, 0xd2, 0x1d, 0x25, 0x18, 0x15, 0x18, 0x35, 0x58, 0x83,
-	0xc0, 0x6c, 0xa8, 0x98, 0x93, 0x04, 0x13, 0x5c, 0xcc, 0x49, 0x49, 0x16, 0xa4, 0xbc, 0x58, 0x48,
-	0x8c, 0x8b, 0xad, 0x28, 0xb5, 0xb8, 0x34, 0xa7, 0x04, 0xaa, 0x01, 0xca, 0x33, 0x52, 0xe5, 0x62,
-	0x71, 0x4e, 0xcc, 0x49, 0x16, 0x92, 0xe5, 0x62, 0x0e, 0x2e, 0xcd, 0x15, 0xe2, 0xd4, 0x03, 0xdb,
-	0x17, 0x94, 0x5a, 0x28, 0x05, 0x67, 0x16, 0x2b, 0x31, 0x38, 0x49, 0x73, 0xf1, 0x64, 0xe6, 0xeb,
-	0xa5, 0x17, 0x15, 0x24, 0x83, 0x45, 0x9d, 0x38, 0x41, 0x9a, 0x02, 0x40, 0xae, 0x0a, 0x60, 0x4c,
-	0x62, 0x03, 0x3b, 0xcf, 0x18, 0x10, 0x00, 0x00, 0xff, 0xff, 0xdb, 0x52, 0xc9, 0x79, 0xac, 0x00,
-	0x00, 0x00,
+	0xd6, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x01, 0xb1, 0x95, 0x0c, 0xb9, 0xd8, 0x83, 0x52,
+	0x0b, 0x4b, 0x53, 0x8b, 0x4b, 0x84, 0x84, 0xb8, 0x58, 0x12, 0x8b, 0xd2, 0x1d, 0x25, 0x18, 0x15,
+	0x18, 0x35, 0x58, 0x83, 0xc0, 0x6c, 0xa8, 0x98, 0x93, 0x04, 0x13, 0x5c, 0xcc, 0x49, 0x49, 0x81,
+	0x8b, 0x2d, 0x28, 0xb5, 0xb8, 0x34, 0xa7, 0x44, 0x48, 0x8c, 0x8b, 0xad, 0x08, 0xcc, 0x82, 0xea,
+	0x81, 0xf2, 0x8c, 0x74, 0xb8, 0x58, 0x9c, 0x13, 0x73, 0x92, 0x85, 0x54, 0xb8, 0x98, 0x83, 0x4b,
+	0x73, 0x85, 0x78, 0xf5, 0xc0, 0xd6, 0x42, 0xed, 0x91, 0xe2, 0x81, 0x71, 0x41, 0x6a, 0x95, 0x18,
+	0x9c, 0xa4, 0xb9, 0x78, 0x32, 0xf3, 0xf5, 0xd2, 0x8b, 0x0a, 0x92, 0xc1, 0x12, 0x4e, 0x9c, 0x20,
+	0xbd, 0x01, 0x20, 0x37, 0x06, 0x30, 0x26, 0xb1, 0x81, 0x1d, 0x6b, 0x0c, 0x08, 0x00, 0x00, 0xff,
+	0xff, 0xae, 0x31, 0x05, 0xd3, 0xba, 0x00, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -143,7 +143,7 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type CalcClient interface {
-	Sum(ctx context.Context, in *Req, opts ...grpc.CallOption) (*Res, error)
+	Sum(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Result, error)
 }
 
 type calcClient struct {
@@ -154,8 +154,8 @@ func NewCalcClient(cc *grpc.ClientConn) CalcClient {
 	return &calcClient{cc}
 }
 
-func (c *calcClient) Sum(ctx context.Context, in *Req, opts ...grpc.CallOption) (*Res, error) {
-	out := new(Res)
+func (c *calcClient) Sum(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Result, error) {
+	out := new(Result)
 	err := c.cc.Invoke(ctx, "/calc.Calc/Sum", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -165,14 +165,14 @@ func (c *calcClient) Sum(ctx context.Context, in *Req, opts ...grpc.CallOption) 
 
 // CalcServer is the server API for Calc service.
 type CalcServer interface {
-	Sum(context.Context, *Req) (*Res, error)
+	Sum(context.Context, *Request) (*Result, error)
 }
 
 // UnimplementedCalcServer can be embedded to have forward compatible implementations.
 type UnimplementedCalcServer struct {
 }
 
-func (*UnimplementedCalcServer) Sum(ctx context.Context, req *Req) (*Res, error) {
+func (*UnimplementedCalcServer) Sum(ctx context.Context, req *Request) (*Result, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Sum not implemented")
 }
 
@@ -181,7 +181,7 @@ func RegisterCalcServer(s *grpc.Server, srv CalcServer) {
 }
 
 func _Calc_Sum_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Req)
+	in := new(Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -193,7 +193,7 @@ func _Calc_Sum_Handler(srv interface{}, ctx context.Context, dec func(interface{
 		FullMethod: "/calc.Calc/Sum",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CalcServer).Sum(ctx, req.(*Req))
+		return srv.(CalcServer).Sum(ctx, req.(*Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
